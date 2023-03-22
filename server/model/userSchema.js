@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    gender:{
+        type:String,
+        required:true
+    },
     email:{
         type:String,
         required:true
@@ -22,7 +26,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    date:{
+    dob:{
         type:Date,
         default: Date.now
     },
@@ -47,18 +51,7 @@ userSchema.methods.generateAuthToken = async function(){
     }
 }
 
-//storing contact
-userSchema.methods.addmessage = async function(email,message){
-    try {
-        this.messages = this.messages.concat({email,message});
-        await this.save();
-        return this.messages;
-    } catch (error) {
-        console.log(error+" this error is at userSchema at 69");
-    }
-        
-}
 
 const User = mongoose.model('USER',userSchema)
 
-module.exports=User;
+module.exports = User;

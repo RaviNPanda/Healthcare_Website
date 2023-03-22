@@ -12,11 +12,41 @@ function Register() {
         setUser({ ...user, [naam]: value })
     }
 
-    const savedata =(e)=>{
+
+    // const savedata = (e)=>{
+    //     e.preventDefault();
+    //     console.log(user);
+    // }
+
+    const PostData = async (e)=>{
         e.preventDefault();
         console.log(user);
-        navigate("/");
+        const {name,email,gender,phone,dob,password,cpassword} = user;
+        const res = await fetch("/api/register",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify({
+            // field name is same as field name in db so not writing like name:name
+            name,email,gender,phone,dob,password,cpassword
+          })
+        })
+        
+        const data = await res.json();
+        if(res.status ===422 || !data){
+          window.alert("Invalid registration")
+          console.log("invalid registration")
+        }
+        else{
+          window.alert("registration completed")
+          console.log("successfull registration")
+    
+          navigate("/");
+        }
+        
     }
+
     return (
         <div className="bg-blue-700 flex justify-center items-center">
             <div className="bg-white p-4 w-4/12 my-5">
@@ -115,7 +145,7 @@ function Register() {
                     />
                     </div>
                     <div className="flex  justify-center">
-                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={savedata}>
+                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={PostData}>
                             Register
                         </button>
                     </div>
