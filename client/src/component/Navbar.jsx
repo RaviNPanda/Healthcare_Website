@@ -23,7 +23,8 @@ function Navbar() {
           <div className="flex pt-8">
             <ul className="flex flex-row space-x-16 ml-12 text-white font-bold">
               <div>
-                <li className="cursor-pointer">Home</li>
+                
+                <NavLink to="/Home"><li className="cursor-pointer">Home</li></NavLink>
               </div>
               <div className="hover:bg-">
                 <li className="cursor-pointer">Detail</li>
