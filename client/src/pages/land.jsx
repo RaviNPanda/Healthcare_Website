@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-
+import React, { useState,useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 function land(){
     const [open,setOpen]=useState(true);
+    const navigate = useNavigate();
     const Menus= [
         {
             title:"Home",
@@ -28,6 +29,36 @@ function land(){
         }
 
     ];
+
+    const callAboutPage =async ()=>{
+        try { 
+          const res = await fetch('/api/Home',{
+            method:"GET",
+            headers:{
+              Accept:"application/json",
+              "Content-Type":"application/json"
+            },
+            credentials:"include"
+          })
+  
+          const data = await res.json();
+          console.log("this is about of react",data)
+        //   setUserdata(data);
+  
+          if(!res.status===200){
+            const error = new error(res.error)
+            throw error;
+          }
+        } catch (error) {
+          navigate('/')
+          window.alert("Please Login First.")
+        }
+     }
+  
+    useEffect(() => {
+        callAboutPage()
+    }, []);
+  
     return(
         <div className="flex">
         <div className={`${open ? 'w-72' : 'w-20'} h-screen p-5 pt-8 bg-dark-purple relative`}>
