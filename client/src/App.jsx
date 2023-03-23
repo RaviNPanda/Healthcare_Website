@@ -4,7 +4,7 @@ import Land from './pages/land'
 import Register from './pages/Register';
 
 
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 function App() {
   return (
     <div>

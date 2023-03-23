@@ -5,7 +5,7 @@ const authenticate = require('../middleware/authenticate')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-router.get('/harsh',(req,res)=>{
+router.get('/',(req,res)=>{
     res.send("hello world from router")
 })
  
