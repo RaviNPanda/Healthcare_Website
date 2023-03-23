@@ -12,11 +12,31 @@ function Login() {
         setData({ ...data, [name]: value })
     }
 
-    const handlelogin = async (e) => {
+    const handlelogin=async (e)=>{
         e.preventDefault();
-        console.log(data);
-        navigate("/");
+        const {email,password} = data;
+        const res = await fetch('/api/login',{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify({
+              email,password
+          })
+        })
+        const message = await res.json();
+    if(res.status===422 || !message){
+      window.alert('something went wrong')
+      console.log("error occured at login.jsx at 31")
     }
+    else{
+      window.alert("Logged in successfully")
+      console.log("successfull registration")
+
+      navigate("/Home");
+    }
+
+  }
     return (
         <div>
             <form method='POST'>
