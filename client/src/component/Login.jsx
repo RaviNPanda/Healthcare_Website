@@ -27,11 +27,10 @@ function Login() {
         const message = await res.json();
     if(res.status===422 || !message){
       window.alert('something went wrong')
-      console.log("error occured at login.jsx at 31")
+      console.log("error occured at login.jsx at 30")
     }
     else{
       window.alert("Logged in successfully")
-      console.log("successfull registration")
 
       navigate("/Home");
     }

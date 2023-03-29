@@ -41,7 +41,7 @@ function Navbar() {
             </ul>
           </div>
           <div className="pl-7 p-7">
-              <NavLink className=" text-white shadow-slate-700 shadow-xl bg-gradient-to-r from-purple-500 ... p-2 rounded-3xl px-9 hover:bg-pink-400 btn btn-warning ms-3  hover:text-black" to="/Dashboard" role="button">Sign Up</NavLink>
+              <NavLink className=" text-white shadow-slate-700 shadow-xl bg-gradient-to-r from-purple-500 ... p-2 rounded-3xl px-9 hover:bg-pink-400 btn btn-warning ms-3  hover:text-black" to="/Register" role="button">Sign Up</NavLink>
           </div>
         </section>
     </div>
