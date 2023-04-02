@@ -14,7 +14,25 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}/>
         <Route path="/Register" element={<Register />}/>
-        <Route path="/Home" element={<Land />}/>
+
+        
+
+        {
+          islogin &&
+          <>
+           
+            <Route path="/Home" element={<Home />}/>
+            <Route path="/profile" element={<Profile />}/>
+            <Route path="/logout" element={<Logout />}/>
+            <Route path="/trail" element={<Trail />}/>
+          </>
+        }
+        <>
+        <Route path="*" element={<Login_Error />}/>
+        </>
+             
+
+
       </Routes>
     </div>
   )
