@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Photo from "../Images/tp.png";
-
+import Sidebar from "../component/Sidebar";
 function Cal() {
   const [value, onChange] = useState(new Date());
   const [selectedOption, setSelectedOption] = useState("");
@@ -19,7 +19,10 @@ function Cal() {
     setSelectedOption1(selectedValue1);
   };
   return (
-    <div className="flex">
+    <div className='flex flex-row'>
+      <Sidebar />
+      <div>
+      <div className="flex">
       <div className="flex m-3">
         <Calendar className=" " onChange={onChange} value={value} />
       </div>
@@ -117,6 +120,9 @@ function Cal() {
     </div>
       </div>
     </div>
+      </div>
+    </div>
+   
   );
 }
 export default Cal;
