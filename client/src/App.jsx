@@ -21,10 +21,11 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Landing />}/>
+        <Route path="/Register" element={<Register />}/>
         {
           islogin &&
           <>
-            <Route path="/Register" element={<Register />}/>
+           
             <Route path="/Home" element={<Home />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/logout" element={<Logout />}/>
