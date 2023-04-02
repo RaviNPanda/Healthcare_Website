@@ -23,20 +23,19 @@ function Navbar() {
           <div className="flex pt-8">
             <ul className="flex flex-row space-x-16 ml-12 text-white font-bold">
               <div>
-                
                 <NavLink to="/Home"><li className="cursor-pointer">Home</li></NavLink>
               </div>
-              <div className="hover:bg-">
-                <li className="cursor-pointer">Detail</li>
+              <div className="">
+                <NavLink to="/Home"><li className="cursor-pointer">Detail</li></NavLink>
               </div>
-              <div className="hover:bg-">
-                <li className="cursor-pointer">Contact</li>
+              <div className="">
+                <NavLink to="/Home"><li className="cursor-pointer">Contact</li></NavLink>
               </div>
-              <div className="hover:bg-">
-                <li className="cursor-pointer">Customer</li>
+              <div className="">
+                <NavLink to="/Home"><li className="cursor-pointer">Customer</li></NavLink>
               </div>
-              <div className="hover:bg-">
-                <li className="cursor-pointer">Booking</li>
+              <div className="">
+                <NavLink to="/Home"><li className="cursor-pointer">Booking</li></NavLink>
               </div>
             </ul>
           </div>

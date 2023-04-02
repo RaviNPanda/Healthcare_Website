@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
-import Modal from 'react-modal';
+import React,{useEffect} from 'react'
+
+import { useSelector, useDispatch } from 'react-redux';
+import * as Patient_data_Actions from '../redux/Patient_data';
+import Sidebar from '../component/Sidebar';
+
 function trial() {
-  const [Isopen, setIsopen] = useState(false)
+ 
+
   return (
-    <>
-    <button onClick={()=>setIsopen(true)}>open</button>
-    <Modal onRequestClose={()=>setIsopen(false)} isOpen={Isopen} className="bg-orange-300 m-40 p-20">
-      <h2>harsh yadav</h2>
-      <button onClick={()=>setIsopen(false)}>close</button>
-    </Modal>
-    </>
+    <div className='flex flex-row'>
+            <Sidebar />
+            <div className="flex ml-[20vw] mt-8">
+                <h1>harsh yadav trail</h1>
+            </div>
+
+            
+        </div>
+
   )
 }
 

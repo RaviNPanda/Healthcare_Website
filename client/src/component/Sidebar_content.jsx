@@ -7,7 +7,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { BsFillCalendar2CheckFill } from 'react-icons/bs';
 import { IoStatsChart } from 'react-icons/io5';
 import { BiDonateBlood } from 'react-icons/bi';
-import { RiLogoutBoxRFill } from 'react-icons/ri';
+import { BiLogOut } from 'react-icons/bi';
 
 
 function Sidebar_content(props) {
@@ -40,12 +40,11 @@ function Sidebar_content(props) {
         },
         {
             title: "logout",
-            src: <RiLogoutBoxRFill />,
-            link: "/"
+            src: <BiLogOut />,
+            link: "/logout"
         }
 
     ];
-    console.log(props.open);
     return (
             <ul className="pt-6">
                 <IconContext.Provider value={{ color: "white", size: '25px' }}>
