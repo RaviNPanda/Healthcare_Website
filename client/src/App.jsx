@@ -9,7 +9,7 @@ import {Route, Routes, useNavigate} from 'react-router-dom';
 import Trail from './pages/trial';
 import Modal from 'react-modal';
 import { useSelector, useDispatch } from 'react-redux';
-
+import Cal from './pages/Cal'
 Modal.setAppElement("#root");
 
 
@@ -22,10 +22,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}/>
         <Route path="/Register" element={<Register />}/>
+        <Route path="/Cal" element={<Cal />}/>
         {
           islogin &&
           <>
-           
+            
             <Route path="/Home" element={<Home />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/logout" element={<Logout />}/>
