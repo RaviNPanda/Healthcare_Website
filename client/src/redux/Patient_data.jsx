@@ -3,6 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 export const Patient_data = createSlice({
     name:'Patient_data',
     initialState:{
+        islogin : false,
         personal_data: {
         },
         medical_data:{}
@@ -12,10 +13,13 @@ export const Patient_data = createSlice({
             state.personal_data = {
                 ...action.payload
             }
+        },
+        loginupdate:(state)=>{
+            state.islogin = !state.islogin;
         }
     }
 })
 
 
-export const {collectdata} = Patient_data.actions
+export const {collectdata,loginupdate} = Patient_data.actions
 export default Patient_data.reducer

@@ -1,46 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, NavLink } from 'react-router-dom'
-import { useSelector, useDispatch } from "react-redux";
-import * as Patient_data_Actions from '../redux/Patient_data';
 import Sidebar_content from '../component/Sidebar_content';
 
 
 
 function Sidebar() {
+
     const [open, setOpen] = useState(true);
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-
-    const Patient_data = useSelector((state)=>state.Patient_data.personal_data)
-
-    const callAboutPage = async () => {
-        try {
-            const res = await fetch('/api/Home', {
-                method: "GET",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                credentials: "include"
-            })
-
-            const data = await res.json();
-            dispatch(Patient_data_Actions.collectdata(data));
-            if (!res.status === 200) {
-                const error = new error(res.error)
-                throw error;
-            }
-        } catch (error) {
-            navigate('/home')
-            window.alert("Please Login First.")
-        }
-    }
-
-    useEffect(() => {
-        if(Object.keys(Patient_data).length === 0){
-            callAboutPage()
-        }
-    }, []);
 
     return (
         <div className="flex">

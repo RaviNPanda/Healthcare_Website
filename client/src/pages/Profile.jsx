@@ -1,8 +1,39 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from '../component/Sidebar';
 function Profile() {
     const Patient_data = useSelector((state) => state.Patient_data.personal_data)
+    const dispatch = useDispatch();
+
+    const callAboutPage = async () => {
+        try {
+            const res = await fetch('/api/Home', {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                credentials: "include"
+            })
+
+            const data = await res.json();
+            dispatch(Patient_data_Actions.collectdata(data));
+            if (!res.status === 200) {
+                const error = new error(res.error)
+                throw error;
+            }
+        } catch (error) {
+            window.alert("Please Login First.")
+            navigate('/')
+        }
+    }
+
+    useEffect(() => {
+        if(Object.keys(Patient_data).length === 0){
+            callAboutPage()
+        }
+    }, []);
+
     return (
         <div className='flex flex-row'>
             <Sidebar />
