@@ -48,11 +48,20 @@ function Register() {
     }
 
     return (
-        <div className="bg-blue-700 flex justify-center items-center">
-            <div className="bg-white p-4 w-4/12 my-5">
-                <h2 className="text-2xl font-bold mb-4">Registration Form</h2>
-                <form>
-                    <div className="mb-4">
+        <div className="min-h-screen bg-gradient-to-tr from-sky-400 to-sky-50 py-40">
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row w-8/12 bg-white rounded-xl shadow-lg mx-auto overflow-hidden">
+          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center bg-[url('/src/Images/tir-appointme-5.webp')]">
+            <h2 className="text-3xl">Welcome</h2>
+            <div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 py-16 px-12">
+            <h2 className="text-3xl mb-4">Register</h2>
+            <p className='mb-4 '>Create your account. It's free and take a minute</p>
+            <form>
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" >
                             Full name
                         </label>
@@ -65,7 +74,7 @@ function Register() {
                         placeholder="Full name"
                     />
                     </div>
-                    <div className="mb-6">
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                             Date of birth
                         </label>
@@ -78,7 +87,7 @@ function Register() {
                         placeholder="Date of Birth"
                     />
                     </div>
-                    <div className="mb-6">
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                             Gender
                         </label>
@@ -89,7 +98,7 @@ function Register() {
                         <option value="other">Others</option>
                     </select>
                     </div>
-                    <div className="mb-6">
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                             Email
                         </label>
@@ -104,7 +113,7 @@ function Register() {
                     />
                     </div>
 
-                    <div className="mb-6">
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                             Number
                         </label>
@@ -118,7 +127,7 @@ function Register() {
                             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                     </div>
-                    <div className="mb-6">
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                             Password
                         </label>
@@ -131,7 +140,7 @@ function Register() {
                             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                     </div>
-                    <div className="mb-6">
+                    <div className="mt-5">
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                             Confirm Password
                         </label>
@@ -144,14 +153,24 @@ function Register() {
                             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                     </div>
-                    <div className="flex  justify-center">
+                    {/* <div className='mt-5'>
+                        <input type="checkbox" className='border border-gray-400'/>
+                        <span>I accept the <a href='#' className="text-purple-500 font-semibold">Terms of Use</a> & <a href='#' className="text-purple-500 font-semibold">Private policy</a></span>
+                    </div> */}
+                    <div className="flex  justify-center mt-5">
                         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={PostData}>
                             Register
                         </button>
                     </div>
+                    
                 </form>
-            </div>
+          </div>
+      
         </div>
+        
+      </div>
+          
+    </div>
     )
 }
 
