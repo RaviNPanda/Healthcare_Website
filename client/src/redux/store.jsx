@@ -4,11 +4,13 @@ import {persistReducer} from 'redux-persist';
 
 //call reducers
 import Patient_data_Reducer from './Patient_data';
+// import  from './Patient_data.jsx';
 
 const persistConfig = {
     key:"root",
     version:1,
-    storage
+    storage,
+    whitelist: ['Patient_data.islogin'],
 }
 
 const reducer = combineReducers({
