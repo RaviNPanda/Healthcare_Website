@@ -22,6 +22,7 @@ function Logout() {
             credentials: "include"
         }).then(() => {
             dispatch(Patient_data_Actions.loginupdate());
+            dispatch(Patient_data_Actions.deletedata())
             navigate('/')
         }).catch((err) => {
             console.log(err)
