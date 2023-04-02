@@ -5,7 +5,7 @@ const authenticate = require('../middleware/authenticate')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-router.get('/harsh',(req,res)=>{
+router.get('/',(req,res)=>{
     res.send("hello world from router")
 })
  
@@ -76,6 +76,8 @@ router.post('/api/login',async(req,res)=>{
         console.log(error)
     }
 })
+
+
 
 router.get('/api/Home', authenticate ,(req,res)=>{
     res.send(req.rootuser)

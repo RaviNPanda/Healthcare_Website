@@ -1,12 +1,15 @@
 import React from 'react'
 import Slide1 from '../Images/slide_1.webp';
 
-import { NavLink, useNavigate } from 'react-router-dom'
-import Login from '../component/Login';
+import {Login} from '../component/Login';
 import Navbar from '../component/Navbar';
 import Landing_slide_pages from '../component/Landing_slide_pages';
+
+import { useSelector, useDispatch } from 'react-redux';
+
 function Landing() {
-  const navigate = useNavigate();
+    const islogin = useSelector((state) => state.Patient_data.islogin)
+    console.log(islogin);
   return (
     <>
       <main className='flex flex-col'>
