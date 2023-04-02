@@ -1,13 +1,18 @@
 import React,{useEffect} from "react";
+import { useNavigate } from 'react-router-dom'
+
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from '../component/Sidebar';
+import * as Patient_data_Actions from '../redux/Patient_data';
+
 function Profile() {
     const Patient_data = useSelector((state) => state.Patient_data.personal_data)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const callAboutPage = async () => {
         try {
-            const res = await fetch('/api/Home', {
+            const res = await fetch('/api/about', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -17,14 +22,18 @@ function Profile() {
             })
 
             const data = await res.json();
-            dispatch(Patient_data_Actions.collectdata(data));
-            if (!res.status === 200) {
+
+            if (res.status != 200) {
                 const error = new error(res.error)
                 throw error;
             }
+            else{
+                dispatch(Patient_data_Actions.collectdata(data));
+                console.log(data);
+            }
         } catch (error) {
             window.alert("Please Login First.")
-            navigate('/')
+            navigate('/Home')
         }
     }
 
