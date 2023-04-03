@@ -12,7 +12,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Cal from './pages/Cal'
 Modal.setAppElement("#root");
 
-
 function App() {
 
   const islogin = useSelector((state) => state.Patient_data.islogin)
@@ -20,11 +19,15 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Landing />}/>
+        {
+          !islogin && 
+          <Route path="/" element={<Landing />}/>
+        }
         <Route path="/Register" element={<Register />}/>
         {
           islogin &&
           <>
+            <Route path="/" element={<Home />}/>
             <Route path="/Cal" element={<Cal />}/>
             <Route path="/Home" element={<Home />}/>
             <Route path="/profile" element={<Profile />}/>
