@@ -22,11 +22,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}/>
         <Route path="/Register" element={<Register />}/>
-        <Route path="/Cal" element={<Cal />}/>
         {
           islogin &&
           <>
-            
+            <Route path="/Cal" element={<Cal />}/>
             <Route path="/Home" element={<Home />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/logout" element={<Logout />}/>

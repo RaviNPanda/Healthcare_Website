@@ -30,7 +30,7 @@ function Sidebar_content(props) {
         {
             title: "Previous",
             src: <IoStatsChart />,
-            link: "/"
+            link: "/Cal"
         },
         {
             title: "Blood donation",
@@ -51,7 +51,6 @@ function Sidebar_content(props) {
                     {Menus.map((menu, index) => (
                         <NavLink key={index} to={menu.link}>
                             <li className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md ${menu.gap ? "mt-9" : "mt-2"}`}>
-                                
                                 {menu.src}
                                 <span className={`${!props.open && 'hidden'} origin-left duration-200`}>{menu.title}</span>
                             </li>
