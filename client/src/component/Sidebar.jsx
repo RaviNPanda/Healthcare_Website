@@ -5,7 +5,7 @@ import Sidebar_content from '../component/Sidebar_content';
 
 function Sidebar() {
 
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     return (
         <div className="flex">
