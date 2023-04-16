@@ -31,7 +31,7 @@ function Logout() {
     return (
         <div>
             <>
-                <Modal onRequestClose={() => setIsopen(false)} isOpen={Isopen} className="space-y-3 shadow-lg shadow-black z-10 text-white w-3/12 h-2/6 mx-[38vw] my-[30vh] p-4 bg-blue-600 rounded-xl">
+                <Modal isOpen={Isopen} className="space-y-3 shadow-lg shadow-black z-10 text-white w-3/12 h-2/6 mx-[38vw] my-[30vh] p-4 bg-blue-600 rounded-xl">
                     <div className='flex justify-center'>
                         <BiLogOut size="3rem" className='flex align-middle' />
                     </div>
