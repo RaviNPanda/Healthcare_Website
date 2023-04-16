@@ -17,7 +17,7 @@ require('./db/conn.js')
 const User = require('./model/userSchema.js')
 
 //router
-app.use(require('./router/auth.js'))
+app.use(require('./router/Routers.js'))
 
 //middleware
 // const middleware =(req,res,next)=>{
